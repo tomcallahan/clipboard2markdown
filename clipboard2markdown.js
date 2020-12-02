@@ -93,7 +93,17 @@
         }
       }
     },
-
+    {
+      filter: function (node) {
+        if (node.nodeName === 'span' && node.getAttribute('style')) {
+          var style = node.getAttribute('style');
+          return style.indexOf("font-weight: 700") !== -1;
+        }
+      },
+      replacement: function (content, node) {
+        return '**' + content  + '**';
+      }
+    },
     {
       filter: 'li',
       replacement: function (content, node) {
