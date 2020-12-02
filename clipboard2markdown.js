@@ -20,6 +20,13 @@
     },
 
     {
+      filter: 'b',
+      replacement : function (content) {
+        return '**' + content  + '**';
+      }
+    },
+
+    {
       filter: 'sup',
       replacement: function (content) {
         return '^' + content + '^';
