@@ -95,10 +95,7 @@
     },
     {
       filter: function (node) {
-        if (node.nodeName === 'span' && node.getAttribute('style')) {
-          var style = node.getAttribute('style');
-          return style.indexOf("font-weight: 700") !== -1;
-        }
+        return node.style.fontWeight === "700";
       },
       replacement: function (content, node) {
         return '**' + content  + '**';
